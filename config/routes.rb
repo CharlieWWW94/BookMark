@@ -5,10 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: 'main#index'
-
-  resources :explore
-
-  get 'boogle', to: 'boogle#show'
+  resources :user
 
   # resources :user do
   #   resources :readinglists, shallow: true
