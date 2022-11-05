@@ -9,9 +9,11 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <header></header>
-    <main>
+    <header>
       <%= render partial: 'shared/navbar'%>
+      <%= render partial: 'shared/notification'%>
+    </header>
+    <main>
       <%= yield %>
     </main>
     <footer></footer>
