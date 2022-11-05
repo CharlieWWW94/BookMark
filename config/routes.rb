@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   root to: 'main#index'
   resources :user
+  
+  resources :lists do 
+    resources :books
+  end
 
   # resources :user do
   #   resources :readinglists, shallow: true
