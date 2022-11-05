@@ -1,8 +1,9 @@
 class MainController < ApplicationController
   def index
-  @stinker = User.includes(:lists).find(current_user.id)
-  @stinker.lists.each do |listy|
-    puts listy.title
-  end
+    #below code proves that user > list associations work.
+  # @stinker = User.includes(:lists).find(current_user.id)
+  # @stinker.lists.each do |listy|
+  #   puts listy.title
+  # end
   end
 end

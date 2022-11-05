@@ -6,4 +6,8 @@
 <%= form.text_field :desc, class: "input" %>
 <%= submit_tag("Create List", class: "button") %>
 <% end %>
+<% @user.lists.each do |list|%>
+    <%=list.title %>
+    <%= list.desc %>
+<% end %>
 </div>
