@@ -4,7 +4,7 @@ class MainController < ApplicationController
   def index
     if params[:searchTerm]
       foundBooks = BookGetter.new(params[:searchTerm])
-      @booksDisplay = foundBooks.res
+      @booksDisplay = foundBooks.res["docs"]
     end
     @currentURL = root_path
   end
