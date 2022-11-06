@@ -33,6 +33,10 @@ gem 'devise'
 # Bulma css framework
 gem 'bulma-rails'
 
+#HTTP request client
+
+gem 'rest-client'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

@@ -1,0 +1,13 @@
+<h1><%= @user.email%></h1>
+<div class="is-flex is-flex-direction-column">
+    <%= form_with model: @list, url: lists_path, method: :post do |form| %>
+        <h2 class="title is-5">New Reading list</h2>
+        <%= form.text_field :title, class: "input" %>
+        <%= form.text_field :desc, class: "input" %>
+        <%= submit_tag("Create List", class: "button") %>
+    <% end %>
+    <% @user.lists.each do |list|%>
+        <%=list.title %>
+        <%= list.desc %>
+    <% end %>
+</div>
