@@ -1,0 +1,17 @@
+<div class="card column is-3 m-3">
+  <header class="card-header">
+    <h3 class="title is-5"><%=oneBook["title"] %></h3>
+  </header>
+  <div class="card-content">
+    <p><%=oneBook["first_publish_year"]%></p>
+    <%if oneBook["author_name"]%>
+      <p><%=oneBook["author_name"][0]%></p>
+    <% end %>
+    <%if oneBook["first_sentence"]%>
+      <p><%=oneBook["first_sentence"][0]%></p>
+    <% end %>
+    <% 3.times do |subject|%>
+      <span class="tag is-info"><%= oneBook["subject"] ? oneBook["subject"][subject] : []%></span>
+    <% end %>
+  </div>
+</div>
