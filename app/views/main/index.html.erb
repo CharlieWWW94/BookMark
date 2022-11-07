@@ -1,8 +1,9 @@
-<section class="hero is-medium">
-  <div class="hero-body has-background-primary">
-    <h1 class="title is-1">BookMark</h1>
-    <p class="subtitle is-3">Create your next reading list</p>
+<section class="hero is-medium is-flex">
+  <div class="is-flex is-flex-direction-column is-align-content-start pb-5 pt-5 mt-5">
+    <h1 class="project-title ml-6">BookMark</h1>
+    <p class=" is-size-4 ml-6 pl-2 has-text-light">Create your next reading list</p>
   </div>
+  <div class="hero-body"></div>
 </section>
 <%= render partial: "shared/searchbar"%>
 <% if @booksDisplay %>
@@ -11,3 +12,18 @@
       <%= render partial: "shared/bookCard",locals: {oneBook: oneBook}%> <% end %>
   </div>
 <%end%>
+<style>
+  .hero {
+
+    background-image: linear-gradient(to bottom, rgba(252,87,94, 0.75) , rgba(247,180,44, 0.52) ),
+    url(<%= asset_url("book.jpg")%>);
+    background-position: left 75%;
+  }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    color: white;
+    margin-bottom: 0;
+  }
+</style>
