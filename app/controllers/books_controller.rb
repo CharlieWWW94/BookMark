@@ -13,5 +13,6 @@ class BooksController < ApplicationController
         newBook.published = params["published"].to_i
         newBook.save();
         BookList.create(list_id: params["f_id"].to_i, book_id: newBook.id)
+        redirect_to root_path
     end
 end
