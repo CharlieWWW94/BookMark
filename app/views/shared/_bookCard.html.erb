@@ -4,8 +4,14 @@
       <div class="is-flex is-justify-content-space-between">
         <h3 class="title is-5"><%=oneBook["title"] %></h3>
         <div class="is-flex is-wrap-no-wrap">
-          <%= link_to new_book_path(title: oneBook["title"], f_id: @f_id, author: oneBook["author_name"][0], published: oneBook["first_publish_year"]) do %>
-            <button class="button is-danger mr-1"><span class="icon p-0"><%= image_tag "icons/heart-plus.png" %></span></button>
+          <% if oneBook["author"]%>
+            <%= link_to new_book_path(title: oneBook["title"], f_id: @f_id, author: oneBook["author_name"][0], published: oneBook["first_publish_year"]) do %>
+              <button class="button is-danger mr-1 submit-btn"><span class="icon p-0"><%= image_tag "icons/heart-plus.png" %></span></button>
+            <% end %>
+          <% else %>
+            <%= link_to new_book_path(title: oneBook["title"], f_id: @f_id, author: "Unknown", published: oneBook["first_publish_year"]) do %>
+              <button class="button is-danger mr-1"><span class="icon p-0"><%= image_tag "icons/heart-plus.png" %></span></button>
+            <% end %>
           <% end %>
           <button class="button"><span class="icon p-0"><%= image_tag "icons/book-plus-outline.png" %></span></button>
         </div>
