@@ -2,45 +2,27 @@
   <div class="card-content">
     <div>
       <div class="is-flex is-justify-content-space-between">
-        <h3 class="title is-5"><%=oneBook["title"] %></h3>
+        <h3 class="title is-5"><%=${book["title"] %></h3>
         <div class="is-flex is-wrap-no-wrap">
-          <% if oneBook["author"]%>
-            <%= link_to new_book_path(title: oneBook["title"], f_id: @f_id, author: oneBook["author_name"][0], published: oneBook["first_publish_year"]) do %>
-              <button class="button is-danger mr-1 submit-btn"><span class="icon p-0"><%= image_tag "icons/heart-plus.png" %></span></button>
-            <% end %>
-          <% else %>
-            <%= link_to new_book_path(title: oneBook["title"], f_id: @f_id, author: "Unknown", published: oneBook["first_publish_year"]) do %>
-              <button class="button is-danger mr-1"><span class="icon p-0"><%= image_tag "icons/heart-plus.png" %></span></button>
-            <% end %>
-          <% end %>
+          <button class="button is-danger mr-1 submit-btn"><span class="icon p-0"><%= image_tag "icons/heart-plus.png" %></span></button>
           <button class="button"><span class="icon p-0"><%= image_tag "icons/book-plus-outline.png" %></span></button>
         </div>
       </div>
       <span class="icon-text">
         <span class="icon"><%= image_tag "icons/feather.png" %></span>
-        <span><%=oneBook["first_publish_year"]%></span>
+        <span>${book["first_publish_year"]}</span>
       </span>
       <br>
-      <%if oneBook["author_name"]%>
-        <span class="icon-text mb-4">
-          <span class="icon"><%= image_tag "icons/account.png" %></span>
-          <span><%=oneBook["author_name"][0]%></span>
-        </span>
-        <br>
-      <% end %>
-      <%if oneBook["first_sentence"]%>
-        <p class="mb-2 has-text-weight-semibold" style="border-bottom: 2px solid hsl(141, 53%, 53%)">First sentence</p>
-        <p class="mb-4"><%=oneBook["first_sentence"][0]%></p>
-      <% else %>
-        <p class="mb-2 has-text-weight-semibold" style="border-bottom: 2px solid hsl(141, 53%, 53%)">No further information</p>
-      <% end %>
+      <span class="icon-text mb-4">
+        <span class="icon"><%= image_tag "icons/account.png" %></span>
+        <span>${book["author_name"][0]}</span>
+      </span>
+      <br>
+      <p class="mb-2 has-text-weight-semibold" style="border-bottom: 2px solid hsl(141, 53%, 53%)">First sentence</p>
+      <p class="mb-4">${book["first_sentence"][0]}</p>
     </div>
   </div>
   <div class="is-flex-grow-1 is-flex is-align-items-end is-flex-wrap-wrap p-2">
-    <% 3.times do |subject|%>
-      <% if oneBook["subject"] && oneBook["subject"][subject]%>
-        <span class="tag is-info ml-3 mt-2"> <%= oneBook["subject"][subject] %></span>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+    <span class="tag is-info ml-3 mt-2"> <%= ${book["subject"][subject]}</span>
+      </div>
+    </div>

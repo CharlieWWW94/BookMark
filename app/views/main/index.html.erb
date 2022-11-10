@@ -6,9 +6,5 @@
   <div class="hero-body"></div>
 </section>
 <%= render partial: "shared/searchbar"%>
-<% if @booksDisplay %>
-  <div class="columns is-multiline is-centered">
-    <%@booksDisplay.each do |oneBook| %>
-      <%= render partial: "shared/bookCard",locals: {oneBook: oneBook}%> <% end %>
-  </div>
-<%end%>
+<div class="columns is-multiline is-centered bookArea">
+</div>
